@@ -1,0 +1,24 @@
+nums = list(map(int, input().split()))
+
+
+# Функция проверки на простое число
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+# Фильтрация через lambda
+primes = list(filter(lambda x: is_prime(x), nums))
+
+
+# Вывод
+if primes:
+    print(*primes)
+else:
+    print("No primes")
